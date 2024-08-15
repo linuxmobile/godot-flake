@@ -10,10 +10,10 @@
     flake-utils.lib.eachDefaultSystem (system: let
       pkgs = nixpkgs.legacyPackages.${system};
 
-      version = "4.2.1";
+      version = "4.3";
       godot-stable = pkgs.fetchurl {
         url = "https://github.com/godotengine/godot/releases/download/${version}-stable/Godot_v${version}-stable_linux.x86_64.zip";
-        hash = "sha256-hjEannW3RF60IVMS5gTfH2nHLUZBrz5nBJ4wNWrjdmA=";
+        hash = "sha256-feVkRLEwsQr4TRnH4M9jz56ZN+5LqUNkw7fdEUJTyiE=";
       };
 
       buildInputs = with pkgs; [
@@ -41,7 +41,7 @@
 
       godot-unwrapped = pkgs.stdenv.mkDerivation {
         pname = "godot";
-        version = "4.2.1";
+        version = "4.3";
 
         src = godot-stable;
         nativeBuildInputs = with pkgs; [unzip autoPatchelfHook];
