@@ -60,7 +60,7 @@
         '';
       };
 
-      godot-bin = pkgs.buildFHSUserEnv {
+      godot-bin = pkgs.buildFHSEnv {
         name = "godot";
         targetPkgs = pkgs: buildInputs ++ [godot-unwrapped];
         runScript = "godot";
